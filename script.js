@@ -36,11 +36,11 @@ $(document).ready(function(){
 
     $('.scroll-up-btn').click(function(){
 
-        $('html').animate({
+        $('html, body').animate({
 
             scrollTop:0
 
-        });
+        }, 500);
 
     });
 
@@ -66,9 +66,21 @@ $(document).ready(function(){
     });
     // typing animation script
 
-    var typed = new Typed(".typing", {
+    if($('.typing').length){
 
-        strings: ["Software Engineer","Full Stack Developer","Java Developer","SQL Developer"],
+    new Typed(".typing", {
+
+        strings: [
+
+            "Software Engineer",
+
+            "Full Stack Developer",
+
+            "Java Developer",
+
+            "SQL Developer"
+
+        ],
 
         typeSpeed:100,
 
@@ -77,7 +89,11 @@ $(document).ready(function(){
         loop:true
 
     });
+
+}
     // Owl Carousel
+
+    if($('.carousel').length){
 
     $('.carousel').owlCarousel({
 
@@ -110,5 +126,7 @@ $(document).ready(function(){
         }
 
     });
+
+}
 
 });
